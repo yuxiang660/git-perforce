@@ -1,0 +1,7 @@
+{
+  "repo_root": "./output/repos/utests",
+  "depot_paths": [
+    "//hsv/ap2/ap/ET_Runtime/etnbcs/et_dev/src/wires",
+    "//hsv/ap2/ap/ET_Runtime/etnbcs/et_dev/itests"
+  ]
+}

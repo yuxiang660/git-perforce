@@ -11,9 +11,12 @@ help:
 clean:
 	@rm -rf output
 
-.PHONY: help clean utests command
+.PHONY: help clean utests config
 
 utests: command
 
 command:
 	@$(PY) -m utests.command_tests -v
+
+config:
+	@$(PY) -m utests.config_tests -v

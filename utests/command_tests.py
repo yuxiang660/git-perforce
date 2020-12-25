@@ -3,7 +3,6 @@ from kit import Command
 import os
 import logging
 import unittest
-import time
 
 logging.basicConfig(level=logging.INFO, format='command_tests | %(message)s')
 
