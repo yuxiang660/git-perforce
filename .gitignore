@@ -129,5 +129,4 @@ dmypy.json
 .pyre/
 
 # Project ignore folders
-repos/
 output/
