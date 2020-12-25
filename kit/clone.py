@@ -22,12 +22,12 @@ class Clone:
         assert Command(cmd_git_sync).communicate(config.timeout)
         # Step3: git branch master refs/remotes/p4/master
         cmd_create_master_branch = f"cd {config.repo_root} && git branch master refs/remotes/p4/master"
-        assert Command(cmd_create_master_branch).communicate(config.timeout)
+        assert Command(cmd_create_master_branch).communicate()
         # Step4: git branch dev refs/remotes/p4/master
         cmd_create_dev_branch = f"cd {config.repo_root} && git branch dev refs/remotes/p4/master"
-        assert Command(cmd_create_dev_branch).communicate(config.timeout)
+        assert Command(cmd_create_dev_branch).communicate()
         # Step6: git checkout master
         cmd_checkout_files = f"cd {config.repo_root} && git checkout master"
-        assert Command(cmd_checkout_files).communicate(config.timeout)
+        assert Command(cmd_checkout_files).communicate()
 
         logging.debug(f'--- Done Clone at "{config.repo_root}" ---')
