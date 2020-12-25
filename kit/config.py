@@ -14,3 +14,7 @@ class Config:
     @property
     def depot_paths(self):
         return self._data["depot_paths"]
+
+    @property
+    def timeout(self):
+        return self._data["timeout"]

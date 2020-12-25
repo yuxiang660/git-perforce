@@ -11,7 +11,7 @@ help:
 clean:
 	@rm -rf output
 
-.PHONY: help clean utests config
+.PHONY: help clean utests config clone
 
 utests: command
 
@@ -20,3 +20,6 @@ command:
 
 config:
 	@$(PY) -m utests.config_tests -v
+
+clone:
+	@$(PY) -m utests.clone_tests -v

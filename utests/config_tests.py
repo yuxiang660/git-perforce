@@ -18,6 +18,9 @@ class ConfigTestSuite(unittest.TestCase):
         print(c.repo_root)
         print(c.depot_paths)
 
+    def test_get_sync_depot_paths(self):
+        c = Config(config_file)
+        print(' '.join([path + '@all' for path in c.depot_paths]))
 
 def main():
     unittest.main()
