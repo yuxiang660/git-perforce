@@ -4,7 +4,7 @@ import os
 import logging
 import unittest
 
-logging.basicConfig(level=logging.INFO, format='clone_tests | %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='clone_tests | %(message)s')
 
 config_file = 'utests/mock/config.json'
 

@@ -13,7 +13,9 @@ class Sync:
 
         # Step1: git p4 sync -v //depot@all
         sync_depot_paths = ' '.join([path + '@all' for path in config.depot_paths])
-        cmd_git_sync = f"cd {config.repo_root} && git p4 sync -v {sync_depot_paths}"
+        cmd_git_sync = f"cd {config.repo_root} && git p4 sync {sync_depot_paths}"
+        if logging.root.level <= logging.DEBUG:
+            cmd_git_sync += " -v"
         assert Command(cmd_git_sync).communicate(config.timeout)
         # Step2: git checkout dev
         cmd_checkout_dev = f"cd {config.repo_root} && git checkout dev"
