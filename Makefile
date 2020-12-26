@@ -21,7 +21,7 @@ command:
 config:
 	@$(PY) -m utests.config_tests -v
 
-clone_utests:
+clone_utests: clean
 	@$(PY) -m utests.clone_tests -v
 
 sync_utests:

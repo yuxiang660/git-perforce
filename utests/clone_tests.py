@@ -1,4 +1,4 @@
-from kit import Config, Clone
+from p4_to_git import Config, Clone
 
 import os
 import logging

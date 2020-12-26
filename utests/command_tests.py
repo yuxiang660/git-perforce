@@ -1,4 +1,4 @@
-from kit import Command
+from p4_to_git import Command
 
 import os
 import logging
