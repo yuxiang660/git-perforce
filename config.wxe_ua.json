@@ -6,7 +6,7 @@
     "//hsv/mainwxe/ua/"
   ],
   "exclude_paths":[
-    "//hsv/ap2/ua/HDL/"
+    "//hsv/ap_main/ua/HDL/"
   ],
   "timeout":5000
 }
