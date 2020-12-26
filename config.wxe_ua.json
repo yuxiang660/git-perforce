@@ -8,5 +8,5 @@
   "exclude_paths":[
     "//hsv/ap2/ua/HDL/"
   ],
-  "timeout":15000
+  "timeout":5000
 }
