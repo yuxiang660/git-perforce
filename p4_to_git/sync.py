@@ -5,15 +5,18 @@ import os
 class Sync:
 
     @staticmethod
-    def do(config):
+    def do(config, force):
         logging.debug(f'--- Start Sync at "{config.repo_root}" ---')
         if not os.path.exists(os.path.join(config.repo_root, ".git")):
             logging.error(f'!!! Cannot sync at folder "{config.repo_root}" because it is not a git repository. Please clone it at first !!!')
             exit(1)
 
-        # Step1: git p4 sync -v //depot@all
-        sync_depot_paths = ' '.join([path + '@all' for path in config.depot_paths])
-        cmd_git_sync = f"cd {config.repo_root} && git p4 sync {sync_depot_paths}"
+        # Step1: git p4 sync -v or git p4 sync -v //depot@all
+        if force:
+            sync_depot_paths = ' '.join([path + '@all' for path in config.depot_paths])
+            cmd_git_sync = f"cd {config.repo_root} && git p4 sync {sync_depot_paths}"
+        else:
+            cmd_git_sync = f"cd {config.repo_root} && git p4 sync"
         if logging.root.level <= logging.DEBUG:
             cmd_git_sync += " -v"
         assert Command(cmd_git_sync).communicate(config.timeout)

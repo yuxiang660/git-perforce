@@ -13,8 +13,11 @@ class SyncTestSuite(unittest.TestCase):
     def setUp(self):
         print()
 
-    def test_clone(self):
-        Sync.do(Config(config_file))
+    def test_sync(self):
+        Sync.do(Config(config_file), False)
+
+    def test_sync_force(self):
+        Sync.do(Config(config_file), True)
 
 def main():
     unittest.main()
