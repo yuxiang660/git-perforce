@@ -14,7 +14,8 @@ class Sync:
         # Step1: git p4 sync -v or git p4 sync -v //depot@all
         if force:
             sync_depot_paths = ' '.join([path + '@all' for path in config.depot_paths])
-            cmd_git_sync = f"cd {config.repo_root} && git p4 sync {sync_depot_paths}"
+            exclude_depot_paths = ' '.join(['-' + path for path in config.exclude_paths])
+            cmd_git_sync = f"cd {config.repo_root} && git p4 sync {sync_depot_paths} {exclude_depot_paths}"
         else:
             cmd_git_sync = f"cd {config.repo_root} && git p4 sync"
         if logging.root.level <= logging.DEBUG:

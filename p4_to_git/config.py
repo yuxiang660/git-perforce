@@ -1,5 +1,6 @@
 import json
 import os
+import logging
 
 class Config:
     def __init__(self, config_file):
@@ -13,7 +14,15 @@ class Config:
 
     @property
     def depot_paths(self):
+        for path in  self._data["depot_paths"]:
+            if path[-1] != r'/':
+                logging.error(f'!!! Depot path {path} should end with "/" which represents a folder. "p4_to_git" does not support to clone a single file !!!')
+                exit(1)
         return self._data["depot_paths"]
+
+    @property
+    def exclude_paths(self):
+        return self._data["exclude_paths"]
 
     @property
     def timeout(self):

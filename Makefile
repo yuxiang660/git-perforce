@@ -11,6 +11,24 @@ help:
 clean:
 	@rm -rf output
 
+clone_wxe_ap:
+	@$(PY) p4_to_git.py clone config.wxe_ap.json
+
+sync_wxe_ap:
+	@$(PY) p4_to_git.py sync config.wxe_ap.json
+
+sync_force_wxe_ap:
+	@$(PY) p4_to_git.py sync config.wxe_ap.json -f
+
+clone_wxe_ua:
+	@$(PY) p4_to_git.py clone config.wxe_ua.json
+
+sync_wxe_ua:
+	@$(PY) p4_to_git.py sync config.wxe_ua.json
+
+sync_force_wxe_ua:
+	@$(PY) p4_to_git.py sync config.wxe_ua.json -f
+
 .PHONY: help clean utests config clone_utests sync_utests
 
 utests: command config clone_utests sync_utests

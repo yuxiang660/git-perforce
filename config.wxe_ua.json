@@ -1,0 +1,12 @@
+{
+  "repo_root": "/lan/cva/hsv-apfw/yuxiangw/src/git_repos/src_main_wxe/ua",
+  "depot_paths": [
+    "//hsv/ap2/ua/",
+    "//hsv/ap_main/ua/",
+    "//hsv/mainwxe/ua/"
+  ],
+  "exclude_paths":[
+    "//hsv/ap2/ua/HDL/"
+  ],
+  "timeout":15000
+}

@@ -18,7 +18,8 @@ class Clone:
         assert Command(cmd_git_init).communicate()
         # Step2: git p4 sync -v //depot@all
         sync_depot_paths = ' '.join([path + '@all' for path in config.depot_paths])
-        cmd_git_sync = f"cd {config.repo_root} && git p4 sync {sync_depot_paths}"
+        exclude_depot_paths = ' '.join(['-' + path for path in config.exclude_paths])
+        cmd_git_sync = f"cd {config.repo_root} && git p4 sync {sync_depot_paths} {exclude_depot_paths}"
         if logging.root.level <= logging.DEBUG:
             cmd_git_sync += " -v"
         assert Command(cmd_git_sync).communicate(config.timeout)
