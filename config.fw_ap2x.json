@@ -1,0 +1,8 @@
+{
+  "repo_root": "/lan/cva/hsv-apfw/yuxiangw/src/git_repos/firmware/apollo_2_x",
+  "depot_paths": [
+    "//apollo/2.x/"
+  ],
+  "exclude_paths":[],
+  "timeout":1000
+}
