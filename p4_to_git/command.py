@@ -32,6 +32,7 @@ class Command:
                                             stderr=f)
 
     def communicate(self, timeout_s=None):
+        elapsed = None
         try:
             self._proc.communicate(None, timeout_s)
         except subprocess.TimeoutExpired as e:
